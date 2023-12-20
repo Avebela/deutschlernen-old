@@ -8,8 +8,8 @@
    grid-template-area:*/
   grid-template:
     "header header  header header" 50px
-    "aside  . main main " auto
-    "footer footer footer footer" 50px/ 0.5fr 10px 2fr 2fr;
+    "aside  . article article " auto
+    "footer footer footer footer" 50px/ 1fr 10px 2fr 2fr;
   /* //margin-top: 40px; */
 }
 .wrapper > * {
@@ -26,49 +26,27 @@
 header {
   grid-area: header;
   background-color: rgb(152, 157, 167);
-  padding: 2rem 0;
-  text-align: center;
-}
-header > a {
-  color: white;
-  text-decoration: none;
-  padding: 0 1rem;
-}
-header > a:hover {
-  text-decoration: underline;
+  /* grid-column: 1 / 3;
+  grid-row: 1 / 2; */
 }
 
-h1 {
-  text-align: center;
-  margin-top: 0;
-}
-
-main {
-  grid-area: main;
+article {
+  grid-area: article;
   background-color: rgb(211, 219, 233);
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
+  /* grid-column: 2 / 3;
 
-main a {
-  text-decoration: none;
-  color: var(--color-bg);
-}
-main a:hover {
-  text-decoration: underline;
+  grid-row: 2 / 3; */
 }
 
 aside {
   grid-area: aside;
   background-color: rgb(146, 157, 179);
+  /* grid-column: 1 / 2;
+
+  grid-row: 2 / 3; */
 }
 
 footer {
   grid-area: footer;
   background-color: rgb(116, 119, 127);
-}
-
-.active {
-  color: var(--color-active);
-  cursor: default;
 }
