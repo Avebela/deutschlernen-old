@@ -8,7 +8,7 @@
    grid-template-area:*/
   grid-template:
     "header header  header header" 50px
-    "aside  . main main " auto
+    "aside  . main main " minmax(200px, 500px)
     "footer footer footer footer" 50px/ 0.5fr 10px 2fr 2fr;
   /* //margin-top: 40px; */
 }

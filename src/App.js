@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Createpost } from "./pages/Createpost";
 import { Editpost } from "./pages/Editpost";
+import { Deletepost } from "./pages/Deletepost";
 import { Singlepage } from "./pages/Singlepage";
 import { Homepage } from "./pages/Homepage";
 import { About } from "./pages/Aboutpage";
@@ -23,6 +24,7 @@ function App() {
           <Route path="type" element={<Blogpage />} />
           <Route path="type/:id" element={<Singlepage />} />
           <Route path="type/:id/edit" element={<Editpost />} />
+          <Route path="type/:id/delete" element={<Deletepost />} />
           <Route
             path="type/new"
             element={

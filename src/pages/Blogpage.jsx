@@ -11,7 +11,7 @@ const Blogpage = () => {
   const typeQuery = searchParams.get("type") || "";
   const latest = searchParams.has("latest");
 
-  const startsFrom = latest ? 80 : 1;
+  const startsFrom = latest ? 10 : 1;
 
   useEffect(() => {
     fetch("http://localhost:5000/api/type")
@@ -21,7 +21,7 @@ const Blogpage = () => {
 
   return (
     <div>
-      <h1>Our news</h1>
+      <h1>Темы карточек</h1>
       {/* //   <Link to="/type/new">Add new type</Link> */}
       <BlogFilter
         typeQuery={typeQuery}
@@ -33,7 +33,7 @@ const Blogpage = () => {
         to="/type/new"
         style={{ margin: "1rem 0", display: "inline-block" }}
       >
-        Add new type
+        <h3>Добавить новую тему карточек</h3>
       </Link>
       {
         // {type.map((type) => (

@@ -18,11 +18,11 @@ const Loginpage = () => {
 
   return (
     <div>
-      <h1>Login page</h1>
+      <h1>Войдите в систему</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Name: <input name="username" />
-          <button type="submit">Login</button>
+          Имя: <input name="username" />
+          <button type="submit">Войти</button>
         </label>
       </form>
     </div>

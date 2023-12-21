@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import MyButton from "../components/Commen/UI/button/MyButton";
 
 const Singlepage = () => {
   const { id } = useParams();
@@ -23,13 +24,18 @@ const Singlepage = () => {
 
   return (
     <div>
-      <button onClick={goBack}>Go back</button>
-      <button onClick={goHome}>Go home</button>
+      <MyButton onClick={goBack}>Назад</MyButton>
+      <MyButton onClick={goHome}>На главную страницу</MyButton>
       {type && (
         <>
-          <h1>{type.name}</h1>
-          <p>{type.name}</p>
-          <Link to={`/type/${id}/edit`}>Edit this type</Link>
+          <h3>{type.name}</h3>
+
+          <div>
+            <Link to={`/type/${id}/edit`}>Изменить тему</Link>
+          </div>
+          <div>
+            <Link to={`/type/${id}/delete`}>Удалить тему</Link>
+          </div>
         </>
       )}
     </div>

@@ -1,24 +1,26 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { CustomLink } from "./CustomLink";
 
 const Layout = () => {
   return (
     <div className="wrapper">
       <header>
-        <CustomLink to="/">Home</CustomLink>
-        <CustomLink to="/type">Lernen</CustomLink>
-        <CustomLink to="/about">About</CustomLink>
+        <CustomLink to="/">Главная</CustomLink>
+        <CustomLink to="/type">Учиться</CustomLink>
+        <CustomLink to="/about">О нас</CustomLink>
       </header>
 
       <main>
         <Outlet />
       </main>
       <aside>
-        <h3>Menu</h3>
-        <h2>Hören</h2>
-        <h2>Lesen</h2>
-        <h2>Schreiben</h2>
-        <h2>Sprechen</h2>
+        <Link to={`/type`}>
+          <h3>Sprechen</h3>
+        </Link>
+
+        <h3>Hören</h3>
+        <h3>Lesen</h3>
+        <h3>Schreiben</h3>
       </aside>
       <footer>&copy; Avebela</footer>
     </div>

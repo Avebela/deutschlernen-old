@@ -7,9 +7,9 @@ const Createpost = () => {
 
   return (
     <div>
-      <h1>Create a post</h1>
+      <h1>Создать новую тему карточек</h1>
       <button onClick={() => signout(() => navigate("/", { replace: true }))}>
-        Log Out
+        Выйти
       </button>
     </div>
   );
