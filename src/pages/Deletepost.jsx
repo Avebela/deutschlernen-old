@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { typeAPI } from "../api/api";
 
 const Deletepost = () => {
   const { id } = useParams();

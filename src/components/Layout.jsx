@@ -8,6 +8,7 @@ const Layout = () => {
         <CustomLink to="/">Главная</CustomLink>
         <CustomLink to="/type">Учиться</CustomLink>
         <CustomLink to="/about">О нас</CustomLink>
+        <CustomLink to="/todo">Задания</CustomLink>
       </header>
 
       <main>

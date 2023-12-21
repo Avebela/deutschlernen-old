@@ -13,7 +13,7 @@
   /* //margin-top: 40px; */
 }
 .wrapper > * {
-  background-color: rgb(221, 228, 239);
+  /* //background-color: rgb(221, 228, 239); */
   /* min-width: 100px;
     min-height: 100px; */
   border: 1px solid #000;
@@ -25,7 +25,7 @@
 
 header {
   grid-area: header;
-  background-color: rgb(152, 157, 167);
+  background-color: rgb(204, 209, 221);
   padding: 2rem 0;
   text-align: center;
 }
@@ -45,7 +45,7 @@ h1 {
 
 main {
   grid-area: main;
-  background-color: rgb(211, 219, 233);
+  background-color: rgb(221, 228, 239);
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -60,12 +60,12 @@ main a:hover {
 
 aside {
   grid-area: aside;
-  background-color: rgb(146, 157, 179);
+  background-color: rgb(194, 200, 213);
 }
 
 footer {
   grid-area: footer;
-  background-color: rgb(116, 119, 127);
+  background-color: rgb(196, 199, 209);
 }
 
 .active {

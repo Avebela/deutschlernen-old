@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MyButton from "../components/Commen/UI/button/MyButton";
 import MyInput from "../components/Commen/UI/input/MyInput";
+import { typeAPI } from "../api/api";
 
 const Editpost = () => {
   const { id } = useParams();

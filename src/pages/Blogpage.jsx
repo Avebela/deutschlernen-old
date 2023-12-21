@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 //import { Link, useLocation } from "react-router-dom";
 import { Link, useSearchParams } from "react-router-dom";
 import { BlogFilter } from "../components/BlogFilter";
+import { typeAPI } from "../api/api";
 
 const Blogpage = () => {
   const [type, setType] = useState([]);
@@ -13,10 +14,30 @@ const Blogpage = () => {
 
   const startsFrom = latest ? 10 : 1;
 
+  const getTypes = async () => {
+    try {
+      const data = await typeAPI.getType();
+
+      setType(data);
+    } catch (e) {
+      console.log(e);
+      // dispatch(stopSubmit("edit-type", { _error: e }));
+      // dispatch(stopSubmit("edit-profile", {"contacts": {"facebook": response.data.messages[0] }}));
+      //return Promise.reject(e);
+    }
+    // const respons = await axios.get("http://localhost:5000/api/type");
+    // setType(respons.data);
+    // fetch("http://localhost:5000/api/type")
+    //   .then((res) => res.json())
+    //   .then((data) => setType(data));
+  };
   useEffect(() => {
-    fetch("http://localhost:5000/api/type")
-      .then((res) => res.json())
-      .then((data) => setType(data));
+    getTypes();
+    // const respons = await axios.get("http://localhost:5000/api/type");
+    // setType(respons.data);
+    // fetch("http://localhost:5000/api/type")
+    //   .then((res) => res.json())
+    //   .then((data) => setType(data));
   }, []);
 
   return (
