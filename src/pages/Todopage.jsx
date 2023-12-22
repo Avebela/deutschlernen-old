@@ -6,18 +6,24 @@ import { typeAPI } from "../api/api";
 import classes from "./Todopage.module.css";
 import TodoList from "../components/Todo/TodoList";
 import InputField from "../components/Commen/UI/InputField";
-import { useDispatch } from "react-redux";
-import { addTodo } from "../store/todoSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewTodo, fetchTodos } from "../store/todoSlice";
 
 const Todo = () => {
   //const [todos, setTodos] = useState([]);
   const [text, setText] = useState("");
   const dispatch = useDispatch();
+  const { status, error } = useSelector((state) => state.todos);
 
   const addTask = () => {
-    dispatch(addTodo({ text }));
+    if (text.trim().length) {
+      dispatch(addNewTodo(text));
+    }
     setText("");
   };
+  useEffect(() => {
+    dispatch(fetchTodos());
+  }, [dispatch]);
 
   //const addTodo = () => {
   //   if (text.trim().length) {
@@ -48,8 +54,11 @@ const Todo = () => {
   return (
     <div className={classes.todo}>
       <h1>Список дел</h1>
-
       <InputField text={text} handleInput={setText} handleSubmit={addTask} />
+
+      {status === "loading" && <h2>Loading...</h2>}
+      {error && <h2> An error has occurred</h2>}
+
       <TodoList />
     </div>
   );
